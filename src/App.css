@@ -1,0 +1,233 @@
+/* #root {
+
+} */
+
+
+/* toggle switch theme */
+* {
+	border: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+:root {
+    /* max-width: 1280px; */
+    text-align: center;
+	--hue: 223;
+	--primary: hsl(var(--hue),90%,50%);
+	--trans-dur: 0.6s;
+	--trans-timing: cubic-bezier(0.65,0,0.35,1);
+	/* font-size: calc(60px + (120 - 60) * (100vw - 320px) / (2560 - 320)); */
+}
+body,
+input {
+	font: 1em/1.5 sans-serif;
+}
+body {
+	background-color: hsl(var(--hue),10%,90%);
+	color: hsl(var(--hue),10%,10%);
+	display: flex;
+  width: 100%;
+	transition:
+		background-color var(--trans-dur),
+		color var(--trans-dur);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+body:has(.switch__input:checked) {
+	background-color: hsl(var(--hue),10%,20%);
+	color: hsl(var(--hue),10%,90%);
+}
+.switch,
+.switch__input {
+  font-size: 40px;
+  cursor: pointer;
+	display: block;
+	-webkit-tap-highlight-color: transparent;
+}
+.switch {
+	margin:20px auto;
+	position: relative;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+  
+}
+.switch__icon {
+	color: hsla(var(--hue),10%,80%);
+	pointer-events: none;
+	position: absolute;
+	top: 0.375em;
+	left: 0.375em;
+	width: 0.75em;
+	height: 0.75em;
+	transition:
+		color var(--trans-dur),
+		transform var(--trans-dur) var(--trans-timing);
+}
+.switch__icon:nth-of-type(2) {
+	right: 0.375em;
+	left: auto;
+}
+.switch__inner,
+.switch__inner-icons {
+	border-radius: 0.5em;
+	display: block;
+	overflow: hidden;
+	position: absolute;
+	top: 0.25em;
+	left: 0.25em;
+	width: 2.25em;
+	height: 1em;
+}
+.switch__inner:before,
+.switch__inner-icons {
+	transition: transform var(--trans-dur) var(--trans-timing);
+	transform: translateX(-1.25em);
+}
+.switch__inner:before {
+	background-color: var(--primary);
+	border-radius: inherit;
+	content: "";
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.switch__inner-icons {
+	pointer-events: none;
+}
+.switch__inner-icons .switch__icon {
+	color: hsl(0,0%,100%);
+	top: 0.125em;
+	left: 0.125em;
+	transform: translateX(1.25em);
+}
+.switch__inner-icons .switch__icon:nth-child(2) {
+	right: 0.125em;
+	left: auto;
+}
+.switch__input {
+	background-color: hsl(0,0%,100%);
+	border-radius: 0.75em;
+	box-shadow:
+		0 0 0 0.0625em hsla(var(--hue),90%,50%,0),
+		0 0.125em 0.5em hsla(var(--hue),10%,10%,0.1);
+	outline: transparent;
+	width: 2.75em;
+	height: 1.5em;
+	-webkit-appearance: none;
+	appearance: none;
+	transition:
+		background-color var(--trans-dur),
+		box-shadow var(--trans-dur);
+    border: 2px solid #111;
+}
+.switch__input:checked {
+	background-color: hsl(var(--hue),10%,10%);
+}
+.switch__input:checked ~ .switch__icon {
+	color: hsla(var(--hue),10%,40%);
+}
+.switch__input:checked ~ .switch__inner:before,
+.switch__input:checked ~ .switch__inner-icons {
+	transform: translateX(1.25em);
+}
+.switch__input:not(:checked) ~ .switch__icon:first-of-type,
+.switch__input:checked ~ .switch__icon:nth-of-type(2) {
+	transform: rotate(360deg);
+}
+.switch__input:checked ~ .switch__inner-icons .switch__icon:first-of-type {
+	transform: translateX(-1.25em) rotate(-360deg);
+}
+.switch__input:checked ~ .switch__inner-icons .switch__icon:nth-of-type(2) {
+	transform: translateX(-1.25em) rotate(360deg);
+}
+.switch__input:focus-visible {
+	box-shadow:
+		0 0 0 0.0625em hsla(var(--hue),90%,50%,1),
+		0 0.125em 0.5em hsla(var(--hue),10%,10%,0.1);
+}
+.switch__sr {
+	overflow: hidden;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+}
+
+
+/* //////////////////////////// */
+
+
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* ///////////////////////////////////////////////////// */
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+.App{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.App button{
+  border: 2px solid black;
+  margin-top: 20px;
+}
+.App.light{
+  background-color: white;
+  color: black;
+}
+.App.dark{
+  background-color: #242424;
+  color: white;
+}
+.App.grey{
+  background-color: #203f4f;
+  color: black;
+}
+.App.pink{
+  background-color: #75194c;
+  color: black;
+}
+
+.App h2{
+  margin-top:20px;
+}
+
+
