@@ -27,7 +27,7 @@ function App() {
     <div className={`App `}>
       
       
-      <button>
+      <button to= "about">
         {/* <Link to= "/about"> 
     
         </Link> */}
