@@ -3,6 +3,7 @@ import './App.css';
 // import {useState} from "react";
 import {useContext } from "react";
 import DataContext from "./context/DataContext";
+// import {Link}  from 'react-router-dom';
 
 
 function App() {
@@ -24,6 +25,16 @@ function App() {
 
   return (
     <div className={`App `}>
+      
+      
+      <button>
+        {/* <Link to= "/about"> 
+    
+        </Link> */}
+          Go to About Page
+      </button>
+    
+
       {/* <button onClick={()=> {setTheme(theme== "light" ? "dark" : "light")}}> Toggle theme</button> */}
 {/* toggle switch theme */}
       {/* <h2>Toggle switch</h2> */}
