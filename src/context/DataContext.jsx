@@ -9,13 +9,27 @@ const initialData = {
 
  };
 
-const reducer = () => {}
+ const reducer = (State, action) => {
+  switch (action.type) {
+    case "CHANGE_NAME":
+      return { ...State, name: action.newValue };
+    default:
+      return State;
+  }}
 
-export function DataProvider({ children }) {
+
+
+export function DataProvider( {children} ) {
   const [firstState, dispatch] = useReducer(reducer, initialData);
 
+
+  const changeName = (newName ) => {
+    dispatch({ type: "CHANGE_NAME", newValue: newName  });
+  };
+
+
   return (
-     <ThemeContext.Provider value={{ ...firstState}}>
+     <ThemeContext.Provider value={{ ...firstState , changeName}}>
       {children}
      </ThemeContext.Provider>
   );
