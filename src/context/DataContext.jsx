@@ -13,6 +13,12 @@ const initialData = {
   switch (action.type) {
     case "CHANGE_NAME":
       return { ...State, name: action.newValue };
+    case "CHANGE_AGE":
+      return { ...State, age: action.newValue };
+    case "CHANGE_COUNT":
+      return { ...State, count: action.newValue };
+    case "CHANGE_THEME":
+      return { ...State, theme: action.newValue };
     default:
       return State;
   }}
@@ -23,13 +29,18 @@ export function DataProvider( {children} ) {
   const [firstState, dispatch] = useReducer(reducer, initialData);
 
 
-  const changeName = (newName ) => {
+  const changeName = (newName) => {
     dispatch({ type: "CHANGE_NAME", newValue: newName  });
   };
 
+  const changeAge = ( newAge ) => {
+    dispatch({ type: "CHANGE_AGE", newValue: newAge  });
+  };
+
+
 
   return (
-     <ThemeContext.Provider value={{ ...firstState , changeName}}>
+     <ThemeContext.Provider value={{ ...firstState , changeName, changeAge }}>
       {children}
      </ThemeContext.Provider>
   );

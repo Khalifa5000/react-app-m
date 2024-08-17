@@ -8,7 +8,7 @@ import ThemeContext from "./context/DataContext";
 
 function App() {
 
-  const {name, changeName} = useContext(ThemeContext);
+  const {name, age, changeName, changeAge } = useContext(ThemeContext);
 // const [ name, setName] = useState("Mohamed");
 // const [ age , setAge]  = useState(43);
 // const [count, setCount] = useState(0);
@@ -189,17 +189,17 @@ function App() {
       <h2  style={{marginTop: "50px"}} >My name is {name} </h2>
         <button onClick={() => { changeName("Mohamed Khalifa" ) }}>Change name</button>
         <button  onClick={() => { changeName("Mohamed" ) }}  style={{marginLeft: "20px"}} >Reset name</button>
-        <button  onClick={() => {  }} style={{marginLeft: "20px"}} >Toggle name</button>
+        <button  onClick={() => { changeName(name == "Mohamed"? "Mohamed Khalifa": "Mohamed" ) }} style={{marginLeft: "20px"}} >Toggle name</button>
       </div>
 
       </div>
 
-      {/* <div>
-        <h2  style={{marginTop:"30px"}}> My age is {age}</h2>
-        <button onClick={ changeAge }>Change age</button>
-        <button onClick={ ()=> {setAge(43)} } style={{marginLeft:"20px"}}>Reset age</button>
-        <button onClick={ ()=> {setAge(age == 43 ? 34 : 43)} } style={{marginLeft:"20px"}}>Toggle age</button>
-      </div> */}
+      <div>
+        <h2  style={{marginTop:"30px"}}> My age is {age} </h2>
+        <button onClick={ ()=>{ changeAge(34)}} >Change age</button>
+        <button onClick={ ()=>{ changeAge(43)}}  style={{marginLeft:"20px"}}>Reset age</button>
+        <button onClick={ ()=>{ changeAge (age == 43 ? 34 : 43 ) }} style={{marginLeft:"20px"}}>Toggle age</button>
+      </div>
 
       {/* <div>
         <h2 style={{marginTop:"30px"}}>{count} </h2>
