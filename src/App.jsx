@@ -169,10 +169,10 @@ function App() {
 
 
       <div className="card">
-        <button  onClick ={() =>{("light")}} style={{marginRight: "26px" }}>Light</button>
-        <button  onClick ={() =>{("dark")}} style={{marginRight: "26px"}}>Dark</button>
-        <button  onClick ={() =>{("grey")}} style={{marginRight: "26px"}}>Grey</button>
-        <button  onClick ={() =>{("pink")}}>Pink</button>
+        <button  onClick ={() =>{ changeTheme ("light")}} style={{marginRight: "26px" }}>Light</button>
+        <button  onClick ={() =>{ changeTheme ("dark")}} style={{marginRight: "26px"}}>Dark</button>
+        <button  onClick ={() =>{ changeTheme ("grey")}} style={{marginRight: "26px"}}>Grey</button>
+        <button  onClick ={() =>{ changeTheme ("pink")}}>Pink</button>
         
       <div>
       <h2  style={{marginTop: "50px"}} >My name is {name} </h2>
