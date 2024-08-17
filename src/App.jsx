@@ -2,13 +2,13 @@
 import './App.css';
 // import {useState} from "react";
 import {useContext } from "react";
-import DataContext from "./context/DataContext";
+import ThemeContext from "./context/DataContext";
 // import {Link}  from 'react-router-dom';
 
 
 function App() {
 
-  const {name} = useContext(DataContext);
+  const {name, changeName} = useContext(ThemeContext);
 // const [ name, setName] = useState("Mohamed");
 // const [ age , setAge]  = useState(43);
 // const [count, setCount] = useState(0);
@@ -27,7 +27,7 @@ function App() {
     <div className={`App `}>
       
       
-      <button>
+      <button to= "about">
         {/* <Link to= "/about"> 
     
         </Link> */}
@@ -187,9 +187,9 @@ function App() {
         
       <div>
       <h2  style={{marginTop: "50px"}} >My name is {name} </h2>
-        <button >Change name</button>
-        <button  style={{marginLeft: "20px"}} >Reset name</button>
-        <button  style={{marginLeft: "20px"}} >Toggle name</button>
+        <button onClick={() => { changeName("Mohamed Khalifa" ) }}>Change name</button>
+        <button  onClick={() => { changeName("Mohamed" ) }}  style={{marginLeft: "20px"}} >Reset name</button>
+        <button  onClick={() => {  }} style={{marginLeft: "20px"}} >Toggle name</button>
       </div>
 
       </div>
