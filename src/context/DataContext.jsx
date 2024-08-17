@@ -37,10 +37,18 @@ export function DataProvider( {children} ) {
     dispatch({ type: "CHANGE_AGE", newValue: newAge  });
   };
 
+  const changeCount = ( newCount ) => {
+    dispatch({ type: "CHANGE_COUNT", newValue: newCount  });
+  };
+
+  const changeTheme = ( newTheme ) => {
+    dispatch({ type: "CHANGE_THEME", newValue: newTheme  });
+  };
+
 
 
   return (
-     <ThemeContext.Provider value={{ ...firstState , changeName, changeAge }}>
+     <ThemeContext.Provider value={{ ...firstState , changeName, changeAge, changeCount, changeTheme  }}>
       {children}
      </ThemeContext.Provider>
   );

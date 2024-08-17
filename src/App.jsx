@@ -8,7 +8,7 @@ import ThemeContext from "./context/DataContext";
 
 function App() {
 
-  const {name, age, changeName, changeAge } = useContext(ThemeContext);
+  const {name, age, count, theme, changeName, changeAge, changeCount, changeTheme } = useContext(ThemeContext);
 // const [ name, setName] = useState("Mohamed");
 // const [ age , setAge]  = useState(43);
 // const [count, setCount] = useState(0);
@@ -201,12 +201,12 @@ function App() {
         <button onClick={ ()=>{ changeAge (age == 43 ? 34 : 43 ) }} style={{marginLeft:"20px"}}>Toggle age</button>
       </div>
 
-      {/* <div>
+      <div>
         <h2 style={{marginTop:"30px"}}>{count} </h2>
-        <button onClick={addCount}style={{width: "120px"}} > Count  </button>
-        <button onClick={()=> {setCount(count - 1)}}  style={{marginLeft:"20px"}}> Subtraction  </button>
-        <button onClick={()=> {setCount(0)}}  style={{marginLeft:"20px"}}> Reset count  </button>
-      </div> */}
+        <button onClick={ ()=>{ changeCount (count + 1)}}  style={{width: "120px"}} > Count  </button>
+        <button onClick={ ()=>{ changeCount(count - 1)}}  style={{marginLeft:"20px"}}> Subtraction  </button>
+        <button onClick={ ()=>{ changeCount(0)}}   style={{marginLeft:"20px"}}> Reset count  </button>
+      </div>
 
 
     </div>
