@@ -9,22 +9,11 @@ import ThemeContext from "./context/DataContext";
 function App() {
 
   const {name, age, count, theme, changeName, changeAge, changeCount, changeTheme } = useContext(ThemeContext);
-// const [ name, setName] = useState("Mohamed");
-// const [ age , setAge]  = useState(43);
-// const [count, setCount] = useState(0);
-// const [theme, setTheme] = useState("light")
 
-// const changeAge = () => {
-//   setAge(34)
-// }
-
-// const addCount = () => { 
-//   setCount(count + 1) ;
-//  }
 
 
   return (
-    <div className={`App `}>
+    <div className={`App ${theme}`}>
       
       
       <button to= "about">
@@ -35,11 +24,11 @@ function App() {
       </button>
     
 
-      {/* <button onClick={()=> {setTheme(theme== "light" ? "dark" : "light")}}> Toggle theme</button> */}
+      <button onClick={()=> { changeTheme (theme == "light" ? "dark" : "light")}}> Toggle theme</button>
 {/* toggle switch theme */}
-      {/* <h2>Toggle switch</h2> */}
+      <h2>Toggle switch</h2>
 
-        {/* <div onClick={()=> {setTheme(()=> {theme== "light" ? "dark" : "light"})}}>
+        <div onClick={()=> {( changeTheme (()=> {theme== "light" ? "dark" : "light"}))}}>
 
             <div >
                 <svg display="none" >
@@ -175,15 +164,15 @@ function App() {
             </div>
 
 
-        </div> */}
+        </div>
 
 
 
       <div className="card">
-        {/* <button  onClick ={() =>{setTheme("light")}} style={{marginRight: "26px" }}>Light</button>
-        <button  onClick ={() =>{setTheme("dark")}} style={{marginRight: "26px"}}>Dark</button>
-        <button  onClick ={() =>{setTheme("grey")}} style={{marginRight: "26px"}}>Grey</button>
-        <button  onClick ={() =>{setTheme("pink")}}>Pink</button> */}
+        <button  onClick ={() =>{("light")}} style={{marginRight: "26px" }}>Light</button>
+        <button  onClick ={() =>{("dark")}} style={{marginRight: "26px"}}>Dark</button>
+        <button  onClick ={() =>{("grey")}} style={{marginRight: "26px"}}>Grey</button>
+        <button  onClick ={() =>{("pink")}}>Pink</button>
         
       <div>
       <h2  style={{marginTop: "50px"}} >My name is {name} </h2>
