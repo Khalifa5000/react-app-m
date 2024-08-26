@@ -16,12 +16,15 @@ function App() {
     <div className={`App ${theme}`}>
       
       
+<div>
       <button to= "about">
         {/* <Link to= "/about"> 
     
         </Link> */}
           Go to About Page
       </button>
+      <button style={{marginLeft:"20px"}}>go back</button>
+</div>
     
 
       <button onClick={()=> { changeTheme (theme == "light" ? "dark" : "light")}}> Toggle theme</button>
