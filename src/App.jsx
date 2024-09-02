@@ -17,13 +17,13 @@ function App() {
       
       
 <div>
-      <button to= "about">
+      <button>
         {/* <Link to= "/about"> 
     
         </Link> */}
           Go to About Page
       </button>
-      <button style={{marginLeft:"20px"}}>go back</button>
+      <button style={{marginLeft:"20px"}}>Go back</button>
 </div>
     
 
