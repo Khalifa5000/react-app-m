@@ -3,7 +3,7 @@ import './App.css';
 // import {useState} from "react";
 import {useContext } from "react";
 import ThemeContext from "./context/DataContext";
-// import {Link}  from 'react-router-dom';
+import {Link}  from 'react-router-dom';
 
 
 function App() {
@@ -18,12 +18,17 @@ function App() {
       
 <div>
       <button>
-        {/* <Link to= "/about"> 
-    
-        </Link> */}
-          Go to About Page
+        <Link to= "/about"> 
+              Go to About Page
+        </Link>
+
       </button>
-      <button style={{marginLeft:"20px"}}>Go back</button>
+
+      {/* <button style={{marginLeft:"20px"}}>
+      <Link to= "/"> 
+              Go to Home page
+        </Link>
+      </button> */}
 </div>
     
 
