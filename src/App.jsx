@@ -24,11 +24,6 @@ function App() {
 
       </button>
 
-      {/* <button style={{marginLeft:"20px"}}>
-      <Link to= "/"> 
-              Go to Home page
-        </Link>
-      </button> */}
 </div>
     
 
